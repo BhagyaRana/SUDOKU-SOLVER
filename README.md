@@ -45,19 +45,19 @@ This Web App Automatically Generates Sudoku Puzzle Based on Various Difficulty L
 >- Easy Level
 
 <p align="center">
-<img src="image/easy-lvl-time.png" width="200" alt="Easy Level Time">
+<img src="image/easy-lvl-time.png" width="600" alt="Easy Level Time">
 </p>
 
 >- Medium Level
 
 <p align="center">
-<img src="image/medium-lvl-time.png" width="200" alt="Medium Level Time">
+<img src="image/medium-lvl-time.png" width="600" alt="Medium Level Time">
 </p>
 
 >- Hard Level
 
 <p align="center">
-<img src="image/hard-lvl-time.png" width="200" alt="Hard Level Time">
+<img src="image/hard-lvl-time.png" width="600" alt="Hard Level Time">
 </p>
 
 ## 🤝 Contributing
