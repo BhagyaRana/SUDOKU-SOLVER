@@ -24,7 +24,7 @@ This Web App Automatically Generates Sudoku Puzzle Based on Various Difficulty L
 
 ### 🧩 Generate the Puzzle
 
->- After Clicking the Desired Level of Sudoku Puzzle, Wait for 1-2 Seconds for Sudoku Puzzle to Load
+> After Clicking the Desired Level of Sudoku Puzzle, Wait for 1-2 Seconds for Sudoku Puzzle to Load
 
 <p align="center">
   <img src="image/PUZZLE_LOADED.jpg" width="700" alt="Sudoku Puzzle Loaded Image">
@@ -32,7 +32,7 @@ This Web App Automatically Generates Sudoku Puzzle Based on Various Difficulty L
 
 ### 🤔 Solve the Sudoku Puzzle
 
->- Click on **Solve the Sudoku** Button
+> Click on **Solve the Sudoku** Button
 
 <p align="center">
   <img src="image/FINAL_SOLVED.jpg" width="700" alt="Final Solved Puzzle">
@@ -40,21 +40,21 @@ This Web App Automatically Generates Sudoku Puzzle Based on Various Difficulty L
 
 ### ⌚ Time Taken to Solve
 
->- An Alert also Informs Regarding the Time Taken by Sudoku Solver to Solve the Puzzle
+> An Alert also Informs Regarding the Time Taken by Sudoku Solver to Solve the Puzzle
 
->- Easy Level
+- Easy Level
 
 <p align="center">
 <img src="image/easy-lvl-time.png" width="600" alt="Easy Level Time">
 </p>
 
->- Medium Level
+- Medium Level
 
 <p align="center">
 <img src="image/medium-lvl-time.png" width="600" alt="Medium Level Time">
 </p>
 
->- Hard Level
+- Hard Level
 
 <p align="center">
 <img src="image/hard-lvl-time.png" width="600" alt="Hard Level Time">
