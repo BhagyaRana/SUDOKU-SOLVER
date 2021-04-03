@@ -11,14 +11,10 @@ This Web App Automatically Generates Sudoku Puzzle Based on Various Difficulty L
 
 ### 🍀 Four Levels 
 
-> Easy Level
-> Medium Level
-> Hard Level
-> Random Level
-
-<p align="center">
-  <img align="right" src="image/four-levels.png" width="200"/>
-</p>
+- Easy Level
+- Medium Level
+- Hard Level
+- Random Level
 
 ### ➕ Intial View
 
