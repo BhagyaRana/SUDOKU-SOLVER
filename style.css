@@ -15,7 +15,7 @@ body {
   text-align: center;
   display: inline-block;
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 10%;
 }
 
@@ -29,7 +29,6 @@ body {
   font-family: "Lucida Console", Monaco, monospace;
   font-size: 14px;
   letter-spacing: 1px;
-  cursor: pointer;
   box-shadow: inset 0 0 0 0 #d80286;
   -webkit-transition: ease-out 0.4s;
   -moz-transition: ease-out 0.4s;
@@ -38,14 +37,17 @@ body {
 }
 
 .slide_right:hover {
+  cursor: pointer;
   box-shadow: inset 400px 0 0 0 #d80286;
 }
 
 .slide_left:hover {
+  cursor: pointer;
   box-shadow: inset 0 0 0 50px #d80286;
 }
 
 .slide_diagonal:hover {
+  cursor: pointer;
   box-shadow: inset 400px 50px 0 0 #d80286;
 }
 /* BUTTON PART OVER */

@@ -9,6 +9,13 @@
 
 This Web App Automatically Generates Sudoku Puzzle Based on Various Difficulty Level and Also Informs the Time Taken to Solve Them
 
+### How to run
+
+- Install python and pip
+- Run pip install -r requirements.txt
+- Run python api.py
+- Open index.html
+
 ### 🍀 Four Levels 
 
 - Easy Level
