@@ -1,3 +1,4 @@
+import math
 N = 9
 
 def isPossible(grid, row, col, num):
@@ -45,7 +46,7 @@ def solve2 (board):
                 val = board[i][j]
                 rowval = (i*10)+(val)
                 colval = (j*10)+(val)
-                subval = (((3*(i/3)*10)+(3*(j/3)))*10 +val)
+                subval = (((3*math.floor(i/3)*10)+(3*math.floor(j/3)))*10 +val)
 
                 row.add(rowval)
                 col.add(colval)
@@ -80,8 +81,8 @@ def solve(board,row,col):
 def remove(i,j,val):
     rowVal=(i*10)+val
     colVal=(j*10)+val
-    subRow=(30*(i/3))
-    subCol=(3*(j/3))
+    subRow=(30*math.floor(i/3))
+    subCol=(3*math.floor(j/3))
     subVal= (subRow+subCol)*10+val
             
     row.remove(rowVal)
@@ -91,8 +92,8 @@ def remove(i,j,val):
 def check(i,j,val):
     rowVal=(i*10)+val
     colVal=(j*10)+val
-    subRow=(30*(i/3))
-    subCol=(3*(j/3))
+    subRow=(30*math.floor(i/3))
+    subCol=(3*math.floor(j/3))
     subVal= (subRow+subCol)*10+val
 
     if( (rowVal in row) or (colVal in col) or (subVal in sub) ):          
