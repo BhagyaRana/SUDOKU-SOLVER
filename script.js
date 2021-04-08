@@ -57,7 +57,8 @@ let easybutton = document.getElementById("generate-sudoku-easy");
 let mediumbutton = document.getElementById("generate-sudoku-medium");
 let hardbutton = document.getElementById("generate-sudoku-hard");
 let randombutton = document.getElementById("generate-sudoku-random");
-let solve = document.getElementById("solve");
+let solve1 = document.getElementById("solve1");
+let solve2 = document.getElementById("solve2");
 let time = document.getElementById("time-taken-sudoku");
 
 // console.log(arr)
@@ -220,7 +221,7 @@ function solveSudoku(board) {
 }
 
 // When we Click on "Solve" Button, Solve Sudoko Function is Called
-solve.onclick = async () => {
+solve1.onclick = async () => {
   const rawResponse = await fetch("http://localhost:5000/api/backtracking", {
     method: "POST",
     headers: {
@@ -232,5 +233,20 @@ solve.onclick = async () => {
   const content = await rawResponse.json();
 //   console.log(content);
   changeBoard(content["board"]);
-  time.innerHTML = content["time"] + " ms";
+  time.innerHTML = content["time"] + " ns";
+};
+
+solve2.onclick = async () => {
+  const rawResponse = await fetch("http://localhost:5000/api/set", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(board),
+  });
+  const content = await rawResponse.json();
+//   console.log(content);
+  changeBoard(content["board"]);
+  time.innerHTML = content["time"] + " ns";
 };
