@@ -56,20 +56,22 @@ This Web App Automatically Generates Sudoku Puzzle Based on Various Difficulty L
 
 > Click on **Solve the Sudoku** Button
 
-> Solved Using BackTracking Algorithm
+>- Solved Using BackTracking Algorithm
 
 <p align="center">
   <img src="image/SOLVED_USING_BACKTRACKING.png" width="700" alt="Backtracking Solved">
 </p>
 
-> Solved Using Crook's Algorithm
+>- Solved Using Crook's Algorithm
 
 <p align="center">
   <img src="image/SOLVED_USING_CROOK.png" width="700" alt="Crooks Solved">
 </p>
 
+- Final Solved View of Web App
+
 <p align="center">
-  <img src="image/FINAL_SOLVED.jpg" width="700" alt="Final Solved Puzzle">
+  <img src="image/FINAL_SOLVED_VIEW.jpg" width="700" alt="Final Solved Puzzle">
 </p>
 
 ## 🤝 Contributing
