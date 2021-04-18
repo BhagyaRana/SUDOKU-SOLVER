@@ -24,7 +24,6 @@ def generate(k):
 def backtracking():
     board = request.get_json()
     start = time()
-    print(board)
     solve1(board, 0, 0)
     end = time()
     end -= start
