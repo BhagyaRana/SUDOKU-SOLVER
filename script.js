@@ -274,4 +274,7 @@ solve2.onclick = async () => {
   //   console.log(content);
   changeBoard(content["board"]);
   time.innerHTML = content["time"] + " ns";
+  if (!content["success"]) {
+    alert("Crooks's cannot solve this sudoku completely");
+  }
 };

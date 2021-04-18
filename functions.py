@@ -70,8 +70,9 @@ def solve2(question):
             and min([sum(x) for x in solution]) == max([sum(x) for x in solution])
             and min([sum(x) for x in zip(*solution)]) == 45
             and min([sum(x) for x in solution]) == 45):
-        pass
+        return [solution, True]
     else:
         # if not found solution then solve remaining with backtracking
-        solve1(solution,0,0)
-    return solution
+        # solve1(solution,0,0)
+        return [solution, False]
+    

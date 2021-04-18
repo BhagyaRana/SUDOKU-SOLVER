@@ -38,11 +38,11 @@ def backtracking():
 def set():
     board = request.get_json()
     start = time()
-    board=solve2(board)
+    l=solve2(board)
     end = time()
     end -= start
     end *= 1000
     end = "{:.2f}".format(end)
-    return jsonify({"board": board, "time": end})
+    return jsonify({"board": l[0], "time": end, "success":l[1]})
 
 app.run()
