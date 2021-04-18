@@ -1,4 +1,6 @@
 import math
+import copy
+from crook import loop_basic_rule, loop_algorithm, check_box_eliminate_others
 
 N = 9
 
@@ -35,80 +37,41 @@ def solve1(grid, row, col):
         grid[row][col] = 0
     return False
 
+def solve2(question):
+    # Copy existing information from question
+    solution = copy.deepcopy(question)
+    possible_value = {}
 
-row = set()
-col = set()
-sub = set()
-
-
-def solve2(board):
-    row.clear()
-    col.clear()
-    sub.clear()
-    for i in range(len(board)):
-        for j in range(len(board[0])):
-            if(board[i][j] != 0):
-                val = board[i][j]
-                rowval = (i*10)+(val)
-                colval = (j*10)+(val)
-                subval = (((3*math.floor(i/3)*10)+(3*math.floor(j/3)))*10 + val)
-
-                row.add(rowval)
-                col.add(colval)
-                sub.add(subval)
-    solve(board, 0, 0)
-
-
-def solve(board, row, col):
-    if(row == len(board)):
-        return True
-
-    newrow = row
-    newcol = col
-    if(col == len(board[0])-1):
-        newcol = 0
-        newrow += 1
-    else:
-        newcol += 1
-
-    if(board[row][col] != 0):
-        return solve(board, newrow, newcol)
-
+    # Cell notation [i, j] i , j: from 1 to 9
+    # First is to include all possible numbers for each cell
     for i in range(1, 10):
-        if(check(row, col, i)):
-            board[row][col] = i
-            if(solve(board, newrow, newcol)):
-                return True
+        for j in range(1, 10):
+            possible_value[i, j] = list(range(1, 10))
 
-            remove(row, col, i)
-            board[row][col] = 0
-    return False
+    # If the cell is already filled, remove all possible numbers for this cell
+    for i in range(1, 10):
+        for j in range(1, 10):
+            if solution[i - 1][j - 1] != 0:
+                possible_value[i, j] = []
 
+    # Run basic rules and Crook's algorithm
+    while True:
+        solution_old = copy.deepcopy(solution)
+        loop_basic_rule(possible_value, solution)
+        loop_algorithm(possible_value, solution)
+        check_box_eliminate_others(possible_value)
+        if solution == solution_old:
+            break
 
-def remove(i, j, val):
-    rowVal = (i*10)+val
-    colVal = (j*10)+val
-    subRow = (30*math.floor(i/3))
-    subCol = (3*math.floor(j/3))
-    subVal = (subRow+subCol)*10+val
+   
 
-    row.remove(rowVal)
-    col.remove(colVal)
-    sub.remove(subVal)
-
-
-def check(i, j, val):
-    rowVal = (i*10)+val
-    colVal = (j*10)+val
-    subRow = (30*math.floor(i/3))
-    subCol = (3*math.floor(j/3))
-    subVal = (subRow+subCol)*10+val
-
-    if((rowVal in row) or (colVal in col) or (subVal in sub)):
-        # if(row.contains(rowVal) or col.contains(colVal) or sub.contains(subVal) ):
-        return False
-
-    row.add(rowVal)
-    col.add(colVal)
-    sub.add(subVal)
-    return True
+    # # Check if the final result is solution
+    if (min([sum(x) for x in zip(*solution)]) == max([sum(x) for x in zip(*solution)])
+            and min([sum(x) for x in solution]) == max([sum(x) for x in solution])
+            and min([sum(x) for x in zip(*solution)]) == 45
+            and min([sum(x) for x in solution]) == 45):
+        pass
+    else:
+        # if not found solution then solve remaining with backtracking
+        solve1(solution,0,0)
+    return solution

@@ -158,9 +158,10 @@ generate.onclick = function () {
 
   fetch(url)
     .then((res) => res.json())
-    .then((board) => {
+    .then((out) => {
       initializeTemp(temp);
       resetColor();
+      board = out;
       setTemp(board, temp);
       setColor(temp);
       changeBoard(board);

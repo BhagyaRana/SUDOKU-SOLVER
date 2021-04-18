@@ -25,6 +25,7 @@ def generate(k):
 def backtracking():
     board = request.get_json()
     start = time()
+    print(board)
     solve1(board, 0, 0)
     end = time()
     end -= start
@@ -38,12 +39,11 @@ def backtracking():
 def set():
     board = request.get_json()
     start = time()
-    solve2(board)
+    board=solve2(board)
     end = time()
     end -= start
     end *= 1000
     end = "{:.2f}".format(end)
     return jsonify({"board": board, "time": end})
-
 
 app.run()

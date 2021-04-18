@@ -19,6 +19,14 @@ body {
   left: 10%;
 }
 
+.button-wrappper-3 {
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  top: 30%;
+  right: 5%;
+}
+
 /* FOR BUTTON HOVER EFFECT */
 .button_slide {
   color: #fff;
