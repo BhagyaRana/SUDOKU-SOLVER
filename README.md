@@ -14,7 +14,7 @@ This Web App Automatically Generates Sudoku Puzzle Based on Various Difficulty L
 - Install python and pip
 - Run pip install -r requirements.txt
 - Run python api.py
-- Open index.html
+- Open index.html 
 
 ### 🍀 Four Levels 
 
@@ -22,6 +22,11 @@ This Web App Automatically Generates Sudoku Puzzle Based on Various Difficulty L
 - Medium Level
 - Hard Level
 - Random Level
+- Time Measure by Algorithm to Solve the Puzzle
+
+<p align="center">
+  <img src="image/hard-lvl-time.png" width="700" alt="Four Levels of App and Time">
+</p>
 
 ### ➕ Intial View
 
@@ -37,34 +42,34 @@ This Web App Automatically Generates Sudoku Puzzle Based on Various Difficulty L
   <img src="image/PUZZLE_LOADED.jpg" width="700" alt="Sudoku Puzzle Loaded Image">
 </p>
 
+> You can also Generate the Sudoku, with Required Number of Spaces using Slider to Generate Given on Right Side. For Eg. Take Spaces as '8'
+
+<p align="center">
+  <img src="image/Generate_Sudoko.png" alt="Generate Button">
+</p>
+
+<p align="center">
+  <img src="image/PUZZLE_LOADED_WITH_8_SPACES.jpg" width="700" alt="Sudoku Puzzle Loaded Image 8 Spaces">
+</p>
+
 ### 🤔 Solve the Sudoku Puzzle
 
 > Click on **Solve the Sudoku** Button
 
+> Solved Using BackTracking Algorithm
+
+<p align="center">
+  <img src="image/SOLVED_USING_BACKTRACKING.png" width="700" alt="Backtracking Solved">
+</p>
+
+> Solved Using Crook's Algorithm
+
+<p align="center">
+  <img src="image/SOLVED_USING_CROOK.png" width="700" alt="Crooks Solved">
+</p>
+
 <p align="center">
   <img src="image/FINAL_SOLVED.jpg" width="700" alt="Final Solved Puzzle">
-</p>
-
-### ⌚ Time Taken to Solve
-
-> An Alert also Informs Regarding the Time Taken by Sudoku Solver to Solve the Puzzle
-
-- Easy Level
-
-<p align="center">
-<img src="image/easy-lvl-time.png" width="600" alt="Easy Level Time">
-</p>
-
-- Medium Level
-
-<p align="center">
-<img src="image/medium-lvl-time.png" width="600" alt="Medium Level Time">
-</p>
-
-- Hard Level
-
-<p align="center">
-<img src="image/hard-lvl-time.png" width="600" alt="Hard Level Time">
 </p>
 
 ## 🤝 Contributing
