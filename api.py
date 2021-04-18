@@ -15,8 +15,7 @@ app.config["DEBUG"] = True
 def generate(k):
     if k > 50:
         k = 50
-    grid = [[0 for i in range(0, 9)] for j in range(0, 9)]
-    grid = generator(grid, k)
+    grid = generator(k)
     return jsonify(grid)
 
 

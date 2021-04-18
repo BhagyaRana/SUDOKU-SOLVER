@@ -3,11 +3,12 @@ from random import randint, shuffle
 
 base = 3
 n = base**2
-g = [[0 for i in range(0, 9)] for j in range(0, 9)]
+
 counter = 0
 
 
-def generator(grid, k):
+def generator(k):
+    grid = [[0 for i in range(0, 9)] for j in range(0, 9)]
     fillDiagonal(grid)
     fillRemaining(grid)
     remove(grid, k)
