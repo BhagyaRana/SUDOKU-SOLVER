@@ -57,6 +57,8 @@ let easybutton = document.getElementById("generate-sudoku-easy");
 let mediumbutton = document.getElementById("generate-sudoku-medium");
 let hardbutton = document.getElementById("generate-sudoku-hard");
 let randombutton = document.getElementById("generate-sudoku-random");
+let generate = document.getElementById("generate-blank");
+let k = document.getElementById("blank-range");
 let solve1 = document.getElementById("solve1");
 let solve2 = document.getElementById("solve2");
 let time = document.getElementById("time-taken-sudoku");
@@ -150,6 +152,28 @@ randombutton.onclick = function () {
   xhrRequest.send();
 };
 
+generate.onclick = function () {
+  let n = k.value;
+  let url = "http://127.0.0.1:5000/generate/" + n;
+
+  fetch(url)
+    .then((res) => res.json())
+    .then((board) => {
+      initializeTemp(temp);
+      resetColor();
+      setTemp(board, temp);
+      setColor(temp);
+      changeBoard(board);
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
+function updateTextInput(val) {
+  document.getElementById("textInput").value = val;
+}
+
 // REAL SUDOKU SOLVING FUNCTION IN JS
 
 function isValid(board, r, c, val) {
@@ -231,7 +255,7 @@ solve1.onclick = async () => {
     body: JSON.stringify(board),
   });
   const content = await rawResponse.json();
-//   console.log(content);
+  //   console.log(content);
   changeBoard(content["board"]);
   time.innerHTML = content["time"] + " ns";
 };
@@ -246,7 +270,7 @@ solve2.onclick = async () => {
     body: JSON.stringify(board),
   });
   const content = await rawResponse.json();
-//   console.log(content);
+  //   console.log(content);
   changeBoard(content["board"]);
   time.innerHTML = content["time"] + " ns";
 };

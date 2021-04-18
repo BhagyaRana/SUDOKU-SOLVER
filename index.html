@@ -110,6 +110,14 @@
 
     <br />
 
+    <div class="blank-generate-div">
+      <input type="range" id="blank-range" name="blanks" min="1" value="1" max="50" onchange="updateTextInput(this.value);">
+      <input type="text" id="textInput" value="1" disabled>
+        <div class="button_slide slide_right" id="generate-blank">
+          Generate
+        </div>
+    </div>
+
     <!-- BUTTONS for Sudoku Generation-->
     <div class="button-wrappper-1">
       <div class="button_slide slide_right" id="generate-sudoku-easy">

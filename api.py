@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from functions import solve1, solve2
+from generator import generator
 from flask_cors import CORS, cross_origin
 from time import time
 
@@ -7,6 +8,17 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.config["DEBUG"] = True
+
+
+@app.route('/generate/<int:k>', methods=['GET'])
+@cross_origin()
+def generate(k):
+    if k > 50:
+        k = 50
+    grid = [[0 for i in range(0, 9)] for j in range(0, 9)]
+    grid = generator(grid, k)
+    return jsonify(grid)
+
 
 @app.route('/api/backtracking', methods=['POST'])
 @cross_origin()
@@ -16,9 +28,10 @@ def backtracking():
     solve1(board, 0, 0)
     end = time()
     end -= start
-    end *= 10**3
+    end *= 1000
     end = "{:.2f}".format(end)
     return jsonify({"board": board, "time": end})
+
 
 @app.route('/api/set', methods=['POST'])
 @cross_origin()
@@ -31,5 +44,6 @@ def set():
     end *= 1000
     end = "{:.2f}".format(end)
     return jsonify({"board": board, "time": end})
+
 
 app.run()
