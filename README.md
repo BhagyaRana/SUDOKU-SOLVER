@@ -25,7 +25,7 @@ This Web App Automatically Generates Sudoku Puzzle Based on Various Difficulty L
 - Time Measure by Algorithm to Solve the Puzzle
 
 <p align="center">
-  <img src="image/hard-lvl-time.png" width="700" alt="Four Levels of App and Time">
+  <img src="image/TIME_TAKEN.png" width="700" alt="Four Levels of App and Time">
 </p>
 
 ### ➕ Intial View
